@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default accent = teal. Overridden at runtime by ThemeContext via inline
+     style on :root when the admin picks a different color. */
+  --color-primary-50: 240 253 250;
+  --color-primary-100: 204 251 241;
+  --color-primary-200: 153 246 228;
+  --color-primary-300: 94 234 212;
+  --color-primary-400: 45 212 191;
+  --color-primary-500: 20 184 166;
+  --color-primary-600: 13 148 136;
+  --color-primary-700: 15 118 110;
+  --color-primary-800: 17 94 89;
+  --color-primary-900: 19 78 74;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--color-primary-400)) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--color-primary-400));
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Hind Siliguri', system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth theme transitions app-wide */
+body,
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
